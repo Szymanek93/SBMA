@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "SBM"
+    }
+  },
+  "defaultProject": "SBM",
+  "cli": {
+    "analytics": false
+  }
 }
