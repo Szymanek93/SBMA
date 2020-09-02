@@ -1,0 +1,12 @@
+<p>admin-employee-list works!</p>
+<table *ngIf="employeeList">
+    <tr *ngFor="let employee of employeeList">
+    <td>{{employee.id}}</td>
+    <td>{{employee.name}}</td>
+    <td>{{employee.lastName}}</td>
+</tr>
+</table>
+
+
+<!-- //*ngIf="employeeList" -->
+<!-- *ngFor="let employee of employeeList.content" -->

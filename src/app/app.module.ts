@@ -10,6 +10,11 @@ import { MainContentComponent } from './main-content/main-content.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { EmployeeComponent } from './employee-list/employee/employee.component';
+import { EmployeeAddComponent } from './employee-list/employee-add/employee-add.component';
+import { AdminEmployeeEditComponent } from './admin/admin-employee-edit/admin-employee-edit.component';
+import { AdminComponent } from './admin/admin.component';
+import { AdminEmployeeListComponent } from './admin/admin-employee-list/admin-employee-list.component';
+
 
 
 
@@ -20,7 +25,11 @@ import { EmployeeComponent } from './employee-list/employee/employee.component';
     FooterComponent,
     HeaderComponent,
     MainContentComponent,
-    EmployeeComponent
+    EmployeeComponent,
+    EmployeeAddComponent,
+    AdminEmployeeEditComponent,
+    AdminComponent,
+    AdminEmployeeListComponent
   ],
   imports: [
     BrowserModule,
