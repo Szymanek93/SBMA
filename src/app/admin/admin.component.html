@@ -1,6 +1,14 @@
-<p>admin workssadsadsa!</p>
-<!-- <app-admin-employee-list *ngFor= "let employee of employeeList" [name]="employee.name"
- [lastName]="employee.lastName" [id]="employee.id" ></app-admin-employee-list> -->
- <app-admin-employee-list></app-admin-employee-list>
+<div>
+<H1>Admin Panel</H1>
+
+<nav>
+    <a routerLink="/admin/employee"> Employee</a>
+    <a routerLink="/admin/raports"> Raports</a>
+</nav>
+
+
+ <!-- <app-admin-employee-list></app-admin-employee-list> -->
+ <router-outlet></router-outlet>
+</div>
 
 
