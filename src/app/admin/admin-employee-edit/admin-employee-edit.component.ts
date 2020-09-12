@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { Employee } from 'src/app/employee-list/employee';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { EmployeeService } from 'src/app/employee.service';
 
 @Component({
@@ -18,48 +18,41 @@ export class AdminEmployeeEditComponent implements OnInit {
     lastName: new FormControl(''),
    });
 
-   private employeeId:number;
-   private employee: Employee;
+   employeeId:number;
+   employee: Employee;
    
-  constructor(private route: ActivatedRoute, private employeeService: EmployeeService, private fb:FormBuilder ) {//pobieranie danych z aktywnego url
+  constructor(private route: ActivatedRoute, private router:Router,
+    private employeeService: EmployeeService, 
+    private fb:FormBuilder ) {//pobieranie danych z aktywnego url
 
    }
 
   ngOnInit(): void {
-    this.route.params.subscribe(params => {
-      // parametr jest typu String, dlatego musimy wymusić, żeby został zrzutowany na typ number
-      this.employeeId = +params.id;
-      this.employeeService.findById(this.employeeId).subscribe(employee => {
-      this.employee = employee;
-      console.log('employee', this.employee);
-      
-      // this.employeeEditForm = new FormGroup({
-      // name: new FormControl(this.employee.name),// 1 opcja formularza
-      // lastName: new FormControl(this.employee.lastName),
-      this.employeeEditForm = this.fb.group({//formularz + walidacja
-        name:[this.employee.name, Validators.required],//pole obowiazkowe
-        lastName:[this.employee.lastName]
-    });
-  });
+    this.employee=new Employee();
 
-});
-}
+    this.employeeId = this.route.snapshot.params['id'];
 
-  onSubmit(){
-    console.log('form submit', this.employeeEditForm.value);
-    if(this.employeeEditForm.valid){
-      // this.employeeService.save
-    }
-    console.log('submit');
-    console.log(this.employeeEditForm.value);
-    if(this.employeeEditForm.touched && this.employeeEditForm.valid){
-      console.log('valid-send form');
-    }else {
-      alert('invalid form')
-    }
-    }
-
+    this.employeeService.getEmployee(this.employeeId)
+    .subscribe(emp=>{
+      console.log(emp)
+      this.employee=emp;
+    })
   }
+  updateEmployee(){
+    this.employeeService.updateEmployee(this.employeeId,this.employee).
+    subscribe(emp=> {
+      console.log(emp);
+      this.employee=new Employee();
+      this.gotoList();
+      
+    })
+  }
+    gotoList(){
+      this.router.navigate(['/admin/employee']);
+    }
 
-
-
+    onSubmit(){
+    this.updateEmployee()
+   }
+   
+  }

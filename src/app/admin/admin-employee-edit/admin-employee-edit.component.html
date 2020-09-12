@@ -1,4 +1,4 @@
-
+<!-- 
 <div>
     <p>działa mordo</p>
 </div>
@@ -17,6 +17,27 @@
         </label>
         </div>
         <div>
-            <button type="submit" [disabled]="!employeeEditForm.touched || !employeeEditForm.valid">Zapisz</button>
+            <button  type="submit" [disabled]="!employeeEditForm.touched || !employeeEditForm.valid" >Zapisz</button>
         </div>
-</form>
+</form> -->
+<h3>Update Employee</h3>
+<div style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    <div >
+      <label for="name">Name</label>
+      <input type="text" required [(ngModel)]="employee.name" name="name">
+    </div>
+
+    <div >
+      <label for="name">Last Name</label>
+      <input type="text" required [(ngModel)]="employee.lastName" name="lastName">
+    </div>
+
+    <!-- <div>
+      <label for="name">Id</label>
+      <input type="text" required [(ngModel)]="employee.id" name="id">
+    </div> -->
+
+    <button type="submit">Submit</button>
+  </form>
+</div>

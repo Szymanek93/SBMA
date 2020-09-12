@@ -4,8 +4,12 @@
     <td>{{employee.name}}</td>
     <td>{{employee.lastName}}</td>
     <td><a routerLink="{{employee.id}}/edit">Edit</a></td> 
+    <td><button (click)="deleteEmployee(employee.id)">Delete</button></td>
+    <!-- <input type="button" value="Refresh Page" onClick="window.location.reload();"> -->
+    
 </tr>
 </table>
+
 
 
 <!-- //*ngIf="employeeList" -->

@@ -15,6 +15,7 @@ const routes: Routes = [
   children:[
   {path:'employee', component:AdminEmployeeListComponent},
   {path:'employee/:id/edit', component:AdminEmployeeEditComponent},
+  // {path:'employee/:id/delete'}
   //{path: '', loadChildren: 'app/test'  }
 ]
 },
