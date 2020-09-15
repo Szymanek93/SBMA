@@ -44,4 +44,7 @@ export class AdminEmployeeListComponent implements OnInit {
 reloadData(){
   window.location.reload();
 }
+gotoCreate(){
+  this.router.navigate(['/admin/employee/create'])
+}
 }

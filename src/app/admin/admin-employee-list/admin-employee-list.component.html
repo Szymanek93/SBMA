@@ -1,14 +1,22 @@
-<table *ngIf="employeeList">
+<table class="table table-striped" *ngIf="employeeList">
+    <tr >
+    <th scope="col">Id</th>
+    <th scope="col">Name</th>
+    <th scope="col">Last Name</th>
+    </tr>
     <tr *ngFor="let employee of employeeList">
     <td>{{employee.id}}</td>
     <td>{{employee.name}}</td>
     <td>{{employee.lastName}}</td>
-    <td><a routerLink="{{employee.id}}/edit">Edit</a></td> 
-    <td><button (click)="deleteEmployee(employee.id)">Delete</button></td>
+    <td><a class="btn btn-secondary" routerLink="{{employee.id}}/edit">Edit</a></td> 
+    <td><button class="btn btn-danger" (click)="deleteEmployee(employee.id)">Delete</button></td>
     <!-- <input type="button" value="Refresh Page" onClick="window.location.reload();"> -->
     
 </tr>
 </table>
+<div>
+    <button class="btn btn-success" (click)="gotoCreate()">Create new Employee</button>
+</div>
 
 
 
