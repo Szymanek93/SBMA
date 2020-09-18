@@ -15,6 +15,11 @@ import { AdminEmployeeEditComponent } from './admin/admin-employee-edit/admin-em
 import { AdminComponent } from './admin/admin.component';
 import { AdminEmployeeListComponent } from './admin/admin-employee-list/admin-employee-list.component';
 import { AdminEmployeeCreateComponent } from './admin/admin-employee-create/admin-employee-create.component';
+import { OwnerListComponent } from './owner-list/owner-list.component';
+import { BusinessListComponent } from './business-list/business-list.component';
+import { BusinessComponent } from './business-list/business/business.component';
+import { OwnerComponent } from './owner-list/owner/owner.component';
+
 
 
 
@@ -31,7 +36,12 @@ import { AdminEmployeeCreateComponent } from './admin/admin-employee-create/admi
     AdminEmployeeEditComponent,
     AdminComponent,
     AdminEmployeeListComponent,
-    AdminEmployeeCreateComponent
+    AdminEmployeeCreateComponent,
+    OwnerListComponent,
+    BusinessListComponent,
+    BusinessComponent,
+    OwnerComponent,
+   
   ],
   imports: [
     BrowserModule,

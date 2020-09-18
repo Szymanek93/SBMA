@@ -24,29 +24,8 @@ export class EmployeeService {
   deleteEmployee(id: number): Observable<any> {
     return this.http.delete(`${this.baseUrl}/${id}`);
   }
-
-  // getEmployeesList(): Observable<any> {
-  //   return this.http.get(`${this.baseUrl}`);
-  // }
-
-  
    getAllEmployee(): Observable<Employee[]>{
      return this.http.get<Employee[]>('http://localhost:8080/employee');
    }
   
-  // findById(employeeId: number): Observable<Employee> {
-  //   return this.httpClient.get<Employee>(`http://localhost:8080/employee/${employeeId}`);
-  // }
-
-  // create(value: any) {
-  //   return this.httpClient.post(`http://api-car-rental.aws.blackfernsoft.pl:8080/rental/cars/`, value);
-  // }
-
-//   save(carId: number, value: any): Observable<any> {
-//     return this.httpClient.put(`http://localhost:8080/employee/${employeeId}`, value);
-//   }
-// }
-// deleteEmployee(employeeId:number): Observable<Employee>{
-//   return this.httpClient.delete<Employee>('http://localhost:8080/employee/delete/${employeeId}')
-// }
 }

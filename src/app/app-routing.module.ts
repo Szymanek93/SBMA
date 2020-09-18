@@ -5,11 +5,15 @@ import { AdminComponent } from './admin/admin.component';
 import { AdminEmployeeEditComponent } from './admin/admin-employee-edit/admin-employee-edit.component';
 import { AdminEmployeeListComponent } from './admin/admin-employee-list/admin-employee-list.component';
 import { AdminEmployeeCreateComponent } from './admin/admin-employee-create/admin-employee-create.component';
+import { BusinessListComponent } from './business-list/business-list.component';
+import { OwnerListComponent } from './owner-list/owner-list.component';
 
 
 const routes: Routes = [
   // {path: '', redirectTo: 'employee', pathMatch: 'full'},
   {path:'employee', component:EmployeeListComponent},
+  {path:'business', component:BusinessListComponent},
+  {path:'owner', component:OwnerListComponent},
 
   {
     path:'admin', component:AdminComponent,
