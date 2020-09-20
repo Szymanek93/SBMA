@@ -14,7 +14,7 @@ export class BusinessComponent implements OnInit {
   @Input() businessStreet;
   @Input() businessHouseNumber;
   @Input() businessDetails;
-  // @Input() Owner;
+  @Input() owner;
   constructor() { }
 
   ngOnInit(): void {

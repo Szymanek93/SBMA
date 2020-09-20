@@ -1,0 +1,30 @@
+<h1>Business List</h1>
+<table class="table table-striped" *ngIf="businessList">
+    <tr >
+    <th scope="col">Name</th>
+    <th scope="col">Type</th>
+    <th scope="col">City</th>
+    <th scope="col">Street</th>
+    <th scope="col">PostCode</th>
+    <th scope="col">House number</th>
+    <th scope="col">Details</th>
+    <th scope="col">Owner</th>
+    </tr>
+    <tr *ngFor="let business of businessList">
+    <td>{{business.businessName}}</td>
+    <td>{{business.businessType}}</td>
+    <td>{{business.businessCity}}</td>
+    <td>{{business.businessStreet}}</td>
+    <td>{{business.businessPostCode}}</td>
+    <td>{{business.businessHouseNumber}}</td>
+    <td>{{business.businessDetails}}</td>
+    <td>{{business.owner.ownerName}}</td>
+    <td><a class="btn btn-secondary" routerLink="{{business.id}}/edit">Edit</a></td> 
+    <td><button class="btn btn-danger" (click)="deleteBusiness(business.id)">Delete</button></td>
+    <!-- <input type="button" value="Refresh Page" onClick="window.location.reload();"> -->
+    
+</tr>
+</table>
+<div>
+    <button class="btn btn-success" (click)="gotoCreate()">Create new Business</button>
+</div>

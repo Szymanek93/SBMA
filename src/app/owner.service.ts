@@ -14,5 +14,19 @@ export class OwnerService {
 getAllOwners():Observable<Owner[]>{
   return this.http.get<Owner[]>('http://localhost:8080/owner');
 }
+createOwner(business: Object): Observable<Object> {
+  return this.http.post(`${this.baseUrl}`, business);
+}
+getOwners(id:number): Observable<any>{
+  return this.http.get(`${this.baseUrl}/${id}`);
+}
+
+updateOwner(id: number, value: any): Observable<Object> {
+  return this.http.put(`${this.baseUrl}/${id}`, value);
+}
+
+deleteOwner(id: number): Observable<any> {
+  return this.http.delete(`${this.baseUrl}/${id}`);
+}
 }
 

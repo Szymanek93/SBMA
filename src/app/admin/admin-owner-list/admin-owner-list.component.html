@@ -1,0 +1,28 @@
+
+<h1>Owner List</h1>
+<table class="table table-striped" *ngIf="ownerList">
+    <tr >
+    <th scope="col">Name</th>
+    <th scope="col">City</th>
+    <th scope="col">Street</th>
+    <th scope="col">PostCode</th>
+    <th scope="col">House number</th>
+    <th scope="col">Phone</th>
+      </tr>
+    <tr *ngFor="let owner of ownerList">
+    <td>{{owner.ownerName}}</td>
+    <td>{{owner.ownerCity}}</td>
+    <td>{{owner.ownerStreet}}</td>
+    <td>{{owner.ownerPostCode}}</td>
+    <td>{{owner.ownerHouseNumber}}</td>
+    <td>{{owner.ownerPhone}}</td>
+    
+    <td><a class="btn btn-secondary" routerLink="{{owner.id}}/edit">Edit</a></td> 
+    <td><button class="btn btn-danger" (click)="deleteOwner(owner.id)">Delete</button></td>
+    <!-- <input type="button" value="Refresh Page" onClick="window.location.reload();"> -->
+    
+</tr>
+</table>
+<div>
+    <button class="btn btn-success" (click)="gotoCreate()">Create new Owner</button>
+</div>

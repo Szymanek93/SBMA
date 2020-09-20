@@ -1,0 +1,35 @@
+<h3>Update Owner</h3>
+<div style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    <div >
+      <label for="name">Name</label>
+      <input type="text" required [(ngModel)]=" owner.ownerName" name="ownerName">
+    </div>
+      <div >
+        <label for="name">City</label>
+        <input type="text" required [(ngModel)]=" owner.ownerCity" name="ownerCity">
+      </div>
+      <div >
+        <label for="name">PostCode</label>
+        <input type="text" required [(ngModel)]=" owner.ownerPostCode" name="ownerPostCode">
+      </div>
+      <div >
+        <label for="name">Street</label>
+        <input type="text" required [(ngModel)]=" owner.ownerStreet" name="ownerStreet">
+      </div>
+      <div >
+        <label for="name">House Number</label>
+        <input type="text" required [(ngModel)]=" owner.ownerHouseNumber" name="ownerHouseNumber">
+      </div>
+      <div >
+        <label for="name">Phone Number</label>
+        <input type="text" required [(ngModel)]=" owner.ownerPhone" name="ownerPhone">
+      </div>
+      <!-- <div >
+        <label for="name">Owner</label>
+        <input type="text" required [(ngModel)]="business.owner" name="owner.name">
+      </div> -->
+
+    <button class="btn btn-success" type="submit">Save</button>
+  </form>
+</div>

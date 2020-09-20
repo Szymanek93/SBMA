@@ -19,6 +19,13 @@ import { OwnerListComponent } from './owner-list/owner-list.component';
 import { BusinessListComponent } from './business-list/business-list.component';
 import { BusinessComponent } from './business-list/business/business.component';
 import { OwnerComponent } from './owner-list/owner/owner.component';
+import { OwnerCreateComponent } from './admin/owner-create/owner-create.component';
+import { OwnerEditComponent } from './admin/owner-edit/owner-edit.component';
+import { BusinessEditComponent } from './admin/business-edit/business-edit.component';
+import { BusinessCreateComponent } from './admin/business-create/business-create.component';
+import { AdminBusinessListComponent } from './admin/admin-business-list/admin-business-list.component';
+import { AdminOwnerListComponent } from './admin/admin-owner-list/admin-owner-list.component';
+import { ReportListComponent } from './report-list/report-list.component';
 
 
 
@@ -41,6 +48,14 @@ import { OwnerComponent } from './owner-list/owner/owner.component';
     BusinessListComponent,
     BusinessComponent,
     OwnerComponent,
+    OwnerCreateComponent,
+    OwnerEditComponent,
+    BusinessEditComponent,
+    BusinessCreateComponent,
+    AdminBusinessListComponent,
+    AdminOwnerListComponent,
+    ReportListComponent,
+    
    
   ],
   imports: [

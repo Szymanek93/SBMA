@@ -1,0 +1,57 @@
+<h3>Create Business</h3>
+<div>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="businessName" required [(ngModel)]="business.businessName" name="businessName">
+    </div>
+
+    <div class="form-group">
+        <label for="name">Type</label>
+        <input type="text" class="form-control" id="businessType" required [(ngModel)]="business.businessType" name="businessType">
+      </div>
+
+      <div class="form-group">
+        <label for="name">City</label>
+        <input type="text" class="form-control" id="businessCity" required [(ngModel)]="business.businessCity" name="businessCity">
+      </div>
+
+      <div class="form-group">
+        <label for="name">Post Code</label>
+        <input type="text" class="form-control" id="businessPostCode" required [(ngModel)]="business.businessPostCode" name="businessPostCode" placeholder="Post Code">
+      </div>
+
+      <div class="form-group">
+        <label for="name">Street</label>
+        <input type="text" class="form-control" id="businessStreet" required [(ngModel)]="business.businessStreet" name="businessStreet">
+      </div>
+
+      <div class="form-group">
+        <label for="name">House number</label>
+        <input type="text" class="form-control" id="businessHouseNumber" required [(ngModel)]="business.businessHouseNumber" name="businessHouseNumber">
+      </div>
+
+      <div class="form-group">
+        <label for="name">Details</label>
+        <input type="text" class="form-control" id="businessDetails" required [(ngModel)]="business.businessDetails" name="businessDetails">
+      </div>
+
+      <div class="form-group">
+        <!-- <label for="name">Owner Id</label>
+        <option *ngFor="let name of "></option>
+        <input type="text" class="form-control" id="onwer" required [(ngModel)]="business.owner" name="owner"> -->
+        <label for="name">Owner</label>
+        <select name="business.owner">
+          <!-- <option *ngFor="let owner of ownerList" [value]="owner.ownerName">{{owner.ownerName}}</option> -->
+          <option *ngFor="let owner of ownerList" [value]="owner">{{owner.ownerName}}</option>
+          <!-- <option *ngFor="let owner of ownerList" [value]="owner.ownerId">{{owner.ownerId}</option> -->
+        </select>
+      </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+<!-- <div>
+  <h4>You submitted successfully!</h4>
+  <button class="btn btn-success" (click)="newEmployee()">Add</button>
+</div> -->

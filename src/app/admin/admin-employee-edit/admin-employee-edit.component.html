@@ -1,25 +1,3 @@
-<!-- 
-<div>
-    <p>działa mordo</p>
-</div>
-
-<form [formGroup]="employeeEditForm" (ngSubmit)="onSubmit()"> 
-    <div>
-    <label>
-        Name:
-        <input type="text" formControlName="name">
-    </label>
-    </div>
-    <div>
-        <label>
-           Last name:
-            <input type="text" formControlName="lastName">
-        </label>
-        </div>
-        <div>
-            <button  type="submit" [disabled]="!employeeEditForm.touched || !employeeEditForm.valid" >Zapisz</button>
-        </div>
-</form> -->
 <h3>Update Employee</h3>
 <div style="width: 400px;">
   <form (ngSubmit)="onSubmit()">

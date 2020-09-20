@@ -11,7 +11,7 @@ import { Business } from './business';
 export class BusinessListComponent implements OnInit {
 
   businessList:Business[];
-  ownerList: Owner[];
+  // ownerList: Owner[];
  
   constructor(private businessService: BusinessService) { }
 

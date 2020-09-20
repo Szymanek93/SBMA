@@ -1,0 +1,70 @@
+<h3>Create Owner</h3>
+<div>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="ownerName" required [(ngModel)]="owner.ownerName" name="ownerName">
+    </div>
+
+    <div class="form-group">
+        <label for="name">City</label>
+        <input type="text" class="form-control" id="ownerCity" required [(ngModel)]="owner.ownerCity" name="ownerCity">
+      </div>
+
+      <div class="form-group">
+        <label for="name">PostCode</label>
+        <input type="text" class="form-control" id="ownerPostCode" required [(ngModel)]="owner.ownerPostCode" name="ownerPostCode">
+      </div>
+
+       <div class="form-group">
+        <label for="name">Street</label>
+        <input type="text" class="form-control" id="ownerStreet" required [(ngModel)]="owner.ownerStreet" name="ownerStreet">
+      </div>
+
+      <div class="form-group">
+        <label for="name">House number</label>
+        <input type="text" class="form-control" id="ownerHouseNumber" required [(ngModel)]="owner.ownerHouseNumber" name="ownerHouseNumber">
+      </div>
+
+      <div class="form-group">
+        <label for="name">Phone</label>
+        <input type="text" class="form-control" id="ownerPhone" required [(ngModel)]="owner.ownerPhone" name="ownerPhone">
+      </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+ <!-- <div>
+  <h4>You submitted successfully!</h4>
+  <button class="btn btn-success" (click)="newEmployee()">Add</button>
+</div> -->
+<!-- <h3>Create Owner</h3>
+<div style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    <div [formGroup]="ownerEditForm" novalidate>
+      <label for="name">Name</label>
+      <input type="text" required [(ngModel)]=" owner.ownerName" name="ownerName">
+    </div>
+      <div [formGroup]="ownerEditForm" novalidate >
+        <label for="name">City</label>
+        <input type="text" required [(ngModel)]=" owner.ownerCity" name="ownerCity">
+      </div>
+      <div [formGroup]="ownerEditForm" novalidate>
+        <label for="name">PostCode</label>
+        <input type="text" required [(ngModel)]=" owner.ownerPostCode" name="ownerPostCode">
+      </div>
+      <div [formGroup]="ownerEditForm" novalidate>
+        <label for="name">Street</label>
+        <input type="text" required [(ngModel)]=" owner.ownerStreet" name="ownerStreet">
+      </div>
+      <div [formGroup]="ownerEditForm" novalidate >
+        <label for="name">House Number</label>
+        <input type="text" required [(ngModel)]=" owner.ownerHouseNumber" name="ownerHouseNumber">
+      </div>
+      <div [formGroup]="ownerEditForm" novalidate>
+        <label for="name">Phone Number</label>
+        <input type="text" required [(ngModel)]=" owner.ownerPhone" name="ownerPhone">
+      </div>
+       <button class="btn btn-success" type="submit">Save</button>
+  </form>
+</div> -->
