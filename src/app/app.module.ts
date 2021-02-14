@@ -26,6 +26,7 @@ import { BusinessCreateComponent } from './admin/business-create/business-create
 import { AdminBusinessListComponent } from './admin/admin-business-list/admin-business-list.component';
 import { AdminOwnerListComponent } from './admin/admin-owner-list/admin-owner-list.component';
 import { ReportListComponent } from './report-list/report-list.component';
+import { AdminReportListComponent } from './admin/admin-report-list/admin-report-list.component';
 
 
 
@@ -55,6 +56,7 @@ import { ReportListComponent } from './report-list/report-list.component';
     AdminBusinessListComponent,
     AdminOwnerListComponent,
     ReportListComponent,
+    AdminReportListComponent,
     
    
   ],

@@ -13,8 +13,8 @@ export class EmployeeService {
   getEmployee(id:number): Observable<any>{
     return this.http.get(`${this.baseUrl}/${id}`);
   }
-  createEmployee(employee: Object): Observable<Object> {
-    return this.http.post(`${this.baseUrl}`, employee);
+  createEmployee(employeeDTO: Object): Observable<Object> {
+    return this.http.post(`${this.baseUrl}`, employeeDTO);
   }
 
   updateEmployee(id: number, value: any): Observable<Object> {

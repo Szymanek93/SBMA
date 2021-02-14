@@ -3,6 +3,7 @@ import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
 import { Employee } from 'src/app/employee-list/employee';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EmployeeService } from 'src/app/employee.service';
+import { EmployeeDTO } from 'src/app/employee-list/employeeDTO';
 
 @Component({
   selector: 'app-admin-employee-edit',
@@ -11,7 +12,7 @@ import { EmployeeService } from 'src/app/employee.service';
 })
 export class AdminEmployeeEditComponent implements OnInit {
  
-  employeeList: Employee[];
+  employeeList: EmployeeDTO[];
 
   employeeEditForm = new FormGroup({
     name: new FormControl(''), 
@@ -19,7 +20,7 @@ export class AdminEmployeeEditComponent implements OnInit {
    });
 
    employeeId:number;
-   employee: Employee;
+   employeeDTO: EmployeeDTO;
    
   constructor(private route: ActivatedRoute, private router:Router,
     private employeeService: EmployeeService, 
@@ -28,21 +29,21 @@ export class AdminEmployeeEditComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.employee=new Employee();
+    this.employeeDTO=new EmployeeDTO();
 
     this.employeeId = this.route.snapshot.params['id'];
 
     this.employeeService.getEmployee(this.employeeId)
     .subscribe(emp=>{
       console.log(emp)
-      this.employee=emp;
+      this.employeeDTO=emp;
     })
   }
   updateEmployee(){
-    this.employeeService.updateEmployee(this.employeeId,this.employee).
+    this.employeeService.updateEmployee(this.employeeId,this.employeeDTO).
     subscribe(emp=> {
       console.log(emp);
-      this.employee=new Employee();
+      this.employeeDTO=new EmployeeDTO();
       this.gotoList();
       
     })

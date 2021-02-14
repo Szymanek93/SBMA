@@ -2,6 +2,7 @@
 <h1>Owner List</h1>
 <table class="table table-striped" *ngIf="ownerList">
     <tr >
+    <th scope="col">Id</th>  
     <th scope="col">Name</th>
     <th scope="col">City</th>
     <th scope="col">Street</th>
@@ -10,6 +11,7 @@
     <th scope="col">Phone</th>
       </tr>
     <tr *ngFor="let owner of ownerList">
+    <td>{{owner.id}}</td>
     <td>{{owner.ownerName}}</td>
     <td>{{owner.ownerCity}}</td>
     <td>{{owner.ownerStreet}}</td>

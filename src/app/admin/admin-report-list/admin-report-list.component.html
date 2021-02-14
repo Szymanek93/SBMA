@@ -1,0 +1,32 @@
+<h2>Report list</h2>
+<table class="table table-striped" *ngIf="reportList">
+    <tr >
+    <th scope="col">Id</th>
+    <th scope="col">Business</th>
+    <th scope="col">Employee Name</th>
+    <th scope="col">Employee Last Name</th>
+    <th scope="col">Completed Tasks</th>
+    <th scope="col">Point Amount</th>
+    <th scope="col">Other Tasks</th>
+    <th scope="col">Works Date</th>
+    <th scope="col">Development Date</th>
+    </tr>
+    <tr *ngFor="let report of reportList">
+    <td>{{report.id}}</td>
+    <td>{{report.business.businessName}}</td>
+    <td>{{report.employee.name}}</td>
+    <td>{{report.employee.lastName}}</td>
+    <td>{{report.completeTasks}}</td>
+    <td>{{report.pointsAmount}}</td>
+    <td>{{report.otherTasks}}</td>
+    <td>{{report.worksDate}}</td>
+    <td>{{report.developmentDate}}</td>
+    <!-- <td><a class="btn btn-secondary" routerLink="{{employee.id}}/edit">Edit</a></td> 
+    <td><button class="btn btn-danger" (click)="deleteEmployee(employee.id)">Delete</button></td> -->
+    <!-- <input type="button" value="Refresh Page" onClick="window.location.reload();"> -->
+    
+</tr>
+</table>
+<div>
+    <!-- <button class="btn btn-success" (click)="gotoCreate()">Create new Employee</button> -->
+</div>

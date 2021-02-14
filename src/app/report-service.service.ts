@@ -6,10 +6,10 @@ import { Report } from './report-list/report';
 @Injectable({
   providedIn: 'root'
 })
-export class ReportService {
-  
+export class ReportServiceService {
+
   private baseUrl = 'http://localhost:8080/report'
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getReport(id:number):Observable<any>{
     return this.http.get(`${this.baseUrl}/${id}`);
@@ -22,13 +22,5 @@ getAllReports(): Observable<Report[]>{
 createReport(report: Object): Observable<Object>{
   return this.http.post(`${this.baseUrl}`, report);
 }
-deleteReport(id:number): Observable<any>{
-  return this.http.delete(`${this.baseUrl}/${id}`);
-}
-
-updateReport (id:number, value: any): Observable<Object>{
-  return this.http.put(`${this.baseUrl}/${id}`,value);
-}
-
 
 }

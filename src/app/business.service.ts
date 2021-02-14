@@ -8,11 +8,11 @@ import { Business } from './business-list/business';
 })
 export class BusinessService {
 
-  private baseUrl= 'http://localhost:8080/business';
+  private baseUrl= 'http://localhost:8080/businesses';
   constructor(private http: HttpClient) { }
 
 getAllBusiness():Observable<Business[]>{
-  return this.http.get<Business[]>('http://localhost:8080/business');
+  return this.http.get<Business[]>('http://localhost:8080/businesses');
 }
 createBusiness(business: Object): Observable<Object> {
   return this.http.post(`${this.baseUrl}`, business);

@@ -1,21 +1,26 @@
 <h3>Create Employee</h3>
-<div>
-  <form (ngSubmit)="onSubmit()">
+<div class="panel panel-primary">
+  <form #myForm="ngForm" (ngSubmit)="onSubmit()" >
     <!-- <div class="form-group">
       <label for="name">Id</label>
-      <input type="text" class="form-control" id="id" required [(ngModel)]="employee.id" name="id">
+      <input type="number" class="form-control" id="id" required [(ngModel)]="employee.id" name="id">
     </div> -->
     <div class="form-group">
       <label for="name">First Name</label>
-      <input type="text" class="form-control" id="name" required [(ngModel)]="employee.name" name="name">
+      <!-- walidacja formularza -->
+      <input type="text"  name="name" #name="ngModel" [(ngModel)]="employeeDTO.employeeName" minlength="3" maxlength="15" required touched="true">
+      <span *ngIf="name.hasError('minlength')"> Wprowadz</span>
     </div>
 
     <div class="form-group">
       <label for="name">Last Name</label>
-      <input type="text" class="form-control" id="lastName" required [(ngModel)]="employee.lastName" name="lastName">
+      <input  type="text" class="form-control"  [(ngModel)]="employeeDTO.employeeLastName" name="lastName">
     </div>
 
-    <button type="submit" class="btn btn-success">Submit</button>
+    <button  type="submit" class="btn btn-success" [disabled]="myForm.invalid">
+      <span class="glyphicon glyphicon-ok"></span>
+      Submit
+    </button>
   </form>
 </div>
 <!-- <div>
