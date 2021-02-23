@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Business } from 'src/app/business-list/business';
+import { BusinessDTO } from 'src/app/business-list/businessDTO';
 import { BusinessService } from 'src/app/business.service';
 import { Owner } from 'src/app/owner-list/owner';
 import { OwnerService } from 'src/app/owner.service';
@@ -13,10 +14,12 @@ import { OwnerService } from 'src/app/owner.service';
 export class BusinessCreateComponent implements OnInit {
 
   ownerList:Owner[];
-  business : Business=new Business();
+  // business : Business=new Business();
+  businessDTO: BusinessDTO = new BusinessDTO()
   submited=false;
 
-  constructor(private businessService:BusinessService, private ownerService:OwnerService,
+  constructor(private businessService:BusinessService,
+     private ownerService:OwnerService,
     private router:Router) { }
 
   ngOnInit(): void {
@@ -24,20 +27,20 @@ export class BusinessCreateComponent implements OnInit {
   }
   newBusiness():void{
     this.submited=false;
-    this.business=new Business();
+    this.businessDTO=new BusinessDTO();
   }
   save(){
     this.businessService
-    .createBusiness(this.business).subscribe(bus=>
+    .createBusiness(this.businessDTO).subscribe(bus=>
       {
         console.log(bus)
-        this.business=new Business();
+        this.businessDTO=new BusinessDTO();
         this.gotoList();
       },
       error=>console.log(error));
   }
 gotoList(){
-  this.router.navigate(['/admin/business']);
+  this.router.navigate(['/admin/businesses']);
 }
 onSubmit(){
   this.submited=true;

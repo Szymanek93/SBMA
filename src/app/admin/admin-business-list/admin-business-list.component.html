@@ -1,6 +1,7 @@
 <h1>Business List</h1>
 <table class="table table-striped" *ngIf="businessList">
     <tr >
+    <th scope="col">Id</th>
     <th scope="col">Name</th>
     <th scope="col">Type</th>
     <th scope="col">City</th>
@@ -11,6 +12,7 @@
     <th scope="col">Owner</th>
     </tr>
     <tr *ngFor="let business of businessList">
+    <td>{{business.id}}</td>
     <td>{{business.businessName}}</td>
     <td>{{business.businessType}}</td>
     <td>{{business.businessCity}}</td>

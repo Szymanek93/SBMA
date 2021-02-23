@@ -2,7 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Business } from 'src/app/business-list/business';
+import { BusinessDTO } from 'src/app/business-list/businessDTO';
 import { BusinessService } from 'src/app/business.service';
+import { Owner } from 'src/app/owner-list/owner';
+import { OwnerService } from 'src/app/owner.service';
+
 
 @Component({
   selector: 'app-business-edit',
@@ -22,42 +26,56 @@ export class BusinessEditComponent implements OnInit {
     businessStreet:new FormControl(''), 
     businessHouseNumber:new FormControl(''), 
     businessDetails:new FormControl(''), 
-    // owner:new FormControl(''), 
+    ownerId:new FormControl(''), 
 
 
   });
+  ownerList:Owner[];
   businessId:number;
-  business:Business;
+  businessDTO : BusinessDTO= new BusinessDTO;
 
 
   constructor(private route: ActivatedRoute, private router:Router,
-    private businessService: BusinessService, 
+    private businessService: BusinessService, private ownerService:OwnerService,
     private fb:FormBuilder ) {
    }
 
   ngOnInit(): void {
-    this.business=new Business();
+    this.getAllOwners();
+    this.businessDTO=new BusinessDTO();
     this.businessId=this.route.snapshot.params['id'];
 
     this.businessService.getBusiness(this.businessId)
     .subscribe(bus=>{
       console.log(bus)
-      this.business=bus;
+      this.businessDTO=bus;
     })
   }
 
+  getAllOwners(){
+    this.ownerService.getAllOwners().subscribe(ownerList=>{
+      console.log(' got list of owners', ownerList)
+      this.ownerList=ownerList;
+    })
+}
+
   updateBusiness(){
-    this.businessService.updateBusiness(this.businessId,this.business).
+    this.businessService.updateBusiness(this.businessId,this.businessDTO).
     subscribe(bus=>{
       console.log(bus);
-      this.business=new Business();
+      this.businessDTO=new BusinessDTO();
       this.gotoList();
-    })
-  }
+    },
+    error=>console.log(error));
+      }
   gotoList(){
-    this.router.navigate(['/admin/business']);
+    this.router.navigate(['/admin/businesses']);
   }
+
+  
   onSubmit(){
     this.updateBusiness()
   }
+
+  
 }

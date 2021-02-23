@@ -3,40 +3,51 @@
   <form (ngSubmit)="onSubmit()">
     <div >
       <label for="name">Name</label>
-      <input type="text" required [(ngModel)]="business.businessName" name="businessName">
+      <input type="text" required [(ngModel)]="businessDTO.businessName" name="businessName">
     </div>
     <div >
         <label for="name">Type</label>
-        <input type="text" required [(ngModel)]="business.businessType" name="businessType">
+        <input type="text" required [(ngModel)]="businessDTO.businessType" name="businessType">
       </div>
       <div >
         <label for="name">City</label>
-        <input type="text" required [(ngModel)]="business.businessCity" name="businessCity">
+        <input type="text" required [(ngModel)]="businessDTO.businessCity" name="businessCity">
       </div>
       <div >
         <label for="name">PostCode</label>
-        <input type="text" required [(ngModel)]="business.businessPostCode" name="businessPostCode">
+        <input type="text" required [(ngModel)]="businessDTO.businessPostCode" name="businessPostCode">
       </div>
       <div >
         <label for="name">Street</label>
-        <input type="text" required [(ngModel)]="business.businessStreet" name="businessStreet">
+        <input type="text" required [(ngModel)]="businessDTO.businessStreet" name="businessStreet">
       </div>
       <div >
         <label for="name">House Number</label>
-        <input type="text" required [(ngModel)]="business.businessHouseNumber" name="businessHouseNumber">
+        <input type="text" required [(ngModel)]="businessDTO.businessHouseNumber" name="businessHouseNumber">
       </div>
       <div >
         <label for="name">Details</label>
-        <input type="text" required [(ngModel)]="business.businessDetails" name="businessDetails">
+        <input type="text" required [(ngModel)]="businessDTO.businessDetails" name="businessDetails">
       </div>
-      <div >
-        <label for="name">Owner</label>
-        <input type="text" required [(ngModel)]="business.owner" name="owner.name">
+      <div class="form-group">
+        
+        <label for="name">Owner Name</label>
+        <!-- <input type="text" class="form-control" id="ownerId" required [(ngModel)]="businessDTO.ownerId" name="ownerId"> -->
+        <select [(ngModel)]="businessDTO.ownerId" name="ownerId">
+          <!-- <option type="number" *ngFor="let owner of ownerList" [value]="businessDTO.ownerId">{{owner.id}}</option> -->
+          <!-- <option selected>Choose...</option> -->
+          <option  *ngFor="let owner of ownerList" [ngValue]="owner.id">{{owner.ownerName}}</option>
+        </select>
       </div>
 
 
  
 
     <button class="btn btn-success" type="submit">Save</button>
+    <!-- <button class="btn btn-secondary" ><a href="/admin/businesses">Anuluj</a></button> -->
+    <a href="/admin/businesses" class="btn btn-secondary" role="button" aria-pressed="true">Anuluj</a>
+    <!-- <button class="btn btn-secondary"  >Anuluj</button> -->
+
+
   </form>
 </div>

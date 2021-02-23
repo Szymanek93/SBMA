@@ -34,6 +34,6 @@ reloadData(){
   window.location.reload();
 }
 gotoCreate(){
-  this.router.navigate(['/admin/business/create'])
+  this.router.navigate(['/admin/businesses/create'])
 }
 }
