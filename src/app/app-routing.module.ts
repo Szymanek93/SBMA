@@ -17,6 +17,7 @@ import { MainContentComponent } from './main-content/main-content.component';
 import { ReportListComponent } from './report-list/report-list.component';
 import { AdminReportListComponent } from './admin/admin-report-list/admin-report-list.component';
 import { AdminReportCreateComponent } from './admin/admin-report-create/admin-report-create.component';
+import { AdminReportEditComponent } from './admin/admin-report-edit/admin-report-edit.component';
 
 
 const routes: Routes = [
@@ -40,8 +41,8 @@ const routes: Routes = [
   {path: 'owners/:id/edit', component:OwnerEditComponent},
   {path: 'owners/create', component:OwnerCreateComponent},
   {path: 'reports', component:AdminReportListComponent},
-  {path: 'reports/create', component:AdminReportCreateComponent}
-  
+  {path: 'reports/create', component:AdminReportCreateComponent},
+  {path: 'reports/:id/edit', component: AdminReportEditComponent}
   // {path:'employee/:id/delete'}
   //{path: '', loadChildren: 'app/test'  }
 ]

@@ -1,56 +1,77 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Business } from 'src/app/business-list/business';
-import { BusinessService } from 'src/app/business.service';
 import { Employee } from 'src/app/employee-list/employee';
 import { EmployeeService } from 'src/app/employee.service';
 import { ReportDTO } from 'src/app/report-list/reportDTO';
 import { ReportService } from 'src/app/report.service';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { BusinessService } from 'src/app/business.service';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'app-admin-report-create',
-  templateUrl: './admin-report-create.component.html',
-  styleUrls: ['./admin-report-create.component.css']
+  selector: 'app-admin-report-edit',
+  templateUrl: './admin-report-edit.component.html',
+  styleUrls: ['./admin-report-edit.component.css']
 })
-export class AdminReportCreateComponent implements OnInit {
+export class AdminReportEditComponent implements OnInit {
 
   constructor(private businessService:BusinessService,
     private employeeService: EmployeeService,
     private reportService: ReportService,
-    private router:Router) { }
+    private router:Router, private route: ActivatedRoute) { }
 
 
   businessList:Business[];
   employeeList:Employee[];
+  reportId:number;
+  reportEditForm = new FormGroup({  
+    businessId: new FormControl(' '),
+    employeeId : new FormControl(' '),
+    reportCompletedTasks:new FormControl(' '),
+    reportDevelopmentDate: new FormControl(' '),
+    reportId: new FormControl(' '),
+    reportOtherTasks: new FormControl(' '),
+    reportWorksDate: new FormControl(' '),
+    reportPointsAmount: new FormControl(' ') ,
+  });
+
   reportDTO: ReportDTO=new ReportDTO();
   submited=false;
 
   ngOnInit(): void {
     this.getAllEmployee();
     this.getAllBusiness();
+    this.reportDTO=new ReportDTO();
+    this.reportId=this.route.snapshot.params['id'];
+
+    this.reportService.getReport(this.reportId)
+    .subscribe(rep=>{
+      console.log(rep)
+      this.reportDTO=rep;
+    })
   }
 newReport():void{
   this.submited=false
   this.reportDTO=new ReportDTO();
 }
 
-save(){
-  this.reportService
-  .createReport(this.reportDTO).subscribe(rep=>
-    {
-      console.log(rep)
-      this.reportDTO=new ReportDTO();
-      this.gotoList();
-    })
-}
+
   gotoList() {
    this.router.navigate(['/admin/reports']);
   }
 
   onSubmit(){
     this.submited=true;
-    this.save();
+    this.updateReport();
+  }
+  updateReport() {
+    this.reportService.updateReport(this.reportId,this.reportDTO).
+    subscribe(rep=>{
+      console.log(rep);
+      this.reportDTO=new ReportDTO();
+      this.gotoList()
+    },
+    error=>console.log(error));
   }
 
   refresh(): void {
@@ -71,5 +92,4 @@ save(){
       this.employeeList=employeeList;
     })
   }
-
 }

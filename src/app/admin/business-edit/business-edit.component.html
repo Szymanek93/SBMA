@@ -32,10 +32,7 @@
       <div class="form-group">
         
         <label for="name">Owner Name</label>
-        <!-- <input type="text" class="form-control" id="ownerId" required [(ngModel)]="businessDTO.ownerId" name="ownerId"> -->
         <select [(ngModel)]="businessDTO.ownerId" name="ownerId">
-          <!-- <option type="number" *ngFor="let owner of ownerList" [value]="businessDTO.ownerId">{{owner.id}}</option> -->
-          <!-- <option selected>Choose...</option> -->
           <option  *ngFor="let owner of ownerList" [ngValue]="owner.id">{{owner.ownerName}}</option>
         </select>
       </div>
@@ -44,9 +41,9 @@
  
 
     <button class="btn btn-success" type="submit">Save</button>
-    <!-- <button class="btn btn-secondary" ><a href="/admin/businesses">Anuluj</a></button> -->
+    
     <a href="/admin/businesses" class="btn btn-secondary" role="button" aria-pressed="true">Anuluj</a>
-    <!-- <button class="btn btn-secondary"  >Anuluj</button> -->
+    
 
 
   </form>

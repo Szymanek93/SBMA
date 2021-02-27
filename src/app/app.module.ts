@@ -29,6 +29,7 @@ import { ReportListComponent } from './report-list/report-list.component';
 import { AdminReportListComponent } from './admin/admin-report-list/admin-report-list.component';
 import { AdminReportCreateComponent } from './admin/admin-report-create/admin-report-create.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AdminReportEditComponent } from './admin/admin-report-edit/admin-report-edit.component';
 
 
 
@@ -60,6 +61,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ReportListComponent,
     AdminReportListComponent,
     AdminReportCreateComponent,
+    AdminReportEditComponent,
     
    
   ],
