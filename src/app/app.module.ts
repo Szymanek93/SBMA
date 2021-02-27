@@ -27,6 +27,8 @@ import { AdminBusinessListComponent } from './admin/admin-business-list/admin-bu
 import { AdminOwnerListComponent } from './admin/admin-owner-list/admin-owner-list.component';
 import { ReportListComponent } from './report-list/report-list.component';
 import { AdminReportListComponent } from './admin/admin-report-list/admin-report-list.component';
+import { AdminReportCreateComponent } from './admin/admin-report-create/admin-report-create.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -57,6 +59,7 @@ import { AdminReportListComponent } from './admin/admin-report-list/admin-report
     AdminOwnerListComponent,
     ReportListComponent,
     AdminReportListComponent,
+    AdminReportCreateComponent,
     
    
   ],
@@ -65,7 +68,8 @@ import { AdminReportListComponent } from './admin/admin-report-list/admin-report
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,8 +3,7 @@
     <tr >
     <th scope="col">Id</th>
     <th scope="col">Business</th>
-    <th scope="col">Employee Name</th>
-    <th scope="col">Employee Last Name</th>
+    <th scope="col">Employee</th>
     <th scope="col">Completed Tasks</th>
     <th scope="col">Point Amount</th>
     <th scope="col">Other Tasks</th>
@@ -14,9 +13,8 @@
     <tr *ngFor="let report of reportList">
     <td>{{report.id}}</td>
     <td>{{report.business.businessName}}</td>
-    <td>{{report.employee.name}}</td>
-    <td>{{report.employee.lastName}}</td>
-    <td>{{report.completeTasks}}</td>
+    <td>{{report.employee.name}} {{report.employee.lastName}}</td>
+    <td>{{report.completedTasks}}</td>
     <td>{{report.pointsAmount}}</td>
     <td>{{report.otherTasks}}</td>
     <td>{{report.worksDate}}</td>
@@ -28,5 +26,5 @@
 </tr>
 </table>
 <div>
-    <!-- <button class="btn btn-success" (click)="gotoCreate()">Create new Employee</button> -->
+    <button class="btn btn-success" (click)="gotoCreate()">Create new Report</button>
 </div>

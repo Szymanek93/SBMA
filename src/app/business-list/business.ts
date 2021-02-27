@@ -11,7 +11,7 @@
 
 // }
 export class Business{
-    Id:number;
+    id:number;
     businessType:string;
     businessName:string;
     businessCity:string;

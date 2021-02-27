@@ -44,7 +44,7 @@ export class AdminReportListComponent implements OnInit {
       window.location.reload();
   }
   gotoCreate(){
-    this.router.navigate(['/admin/report/create'])
+    this.router.navigate(['/admin/reports/create'])
   }
   
   }
