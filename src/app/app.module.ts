@@ -30,6 +30,10 @@ import { AdminReportListComponent } from './admin/admin-report-list/admin-report
 import { AdminReportCreateComponent } from './admin/admin-report-create/admin-report-create.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdminReportEditComponent } from './admin/admin-report-edit/admin-report-edit.component';
+import { AdminInvoiceListComponent } from './admin/admin-invoice-list/admin-invoice-list.component';
+import { AdminInvoiceCreateComponent } from './admin/admin-invoice-create/admin-invoice-create.component';
+import { AdminInvoiceEditComponent } from './admin/admin-invoice-edit/admin-invoice-edit.component';
+import { InvoiceListComponent } from './invoice-list/invoice-list.component';
 
 
 
@@ -62,6 +66,10 @@ import { AdminReportEditComponent } from './admin/admin-report-edit/admin-report
     AdminReportListComponent,
     AdminReportCreateComponent,
     AdminReportEditComponent,
+    AdminInvoiceListComponent,
+    AdminInvoiceCreateComponent,
+    AdminInvoiceEditComponent,
+    InvoiceListComponent,
     
    
   ],

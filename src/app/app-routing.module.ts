@@ -18,6 +18,10 @@ import { ReportListComponent } from './report-list/report-list.component';
 import { AdminReportListComponent } from './admin/admin-report-list/admin-report-list.component';
 import { AdminReportCreateComponent } from './admin/admin-report-create/admin-report-create.component';
 import { AdminReportEditComponent } from './admin/admin-report-edit/admin-report-edit.component';
+import { AdminInvoiceListComponent } from './admin/admin-invoice-list/admin-invoice-list.component';
+import { AdminInvoiceCreateComponent } from './admin/admin-invoice-create/admin-invoice-create.component';
+import { AdminInvoiceEditComponent } from './admin/admin-invoice-edit/admin-invoice-edit.component';
+import { InvoiceListComponent } from './invoice-list/invoice-list.component';
 
 
 const routes: Routes = [
@@ -27,6 +31,7 @@ const routes: Routes = [
   {path:'owner', component:OwnerListComponent},
   {path:'home', component:MainContentComponent},
   {path:'reports', component:ReportListComponent},
+  {path:'invoice', component:InvoiceListComponent},
 
   {
     path:'admin', component:AdminComponent,
@@ -42,7 +47,12 @@ const routes: Routes = [
   {path: 'owners/create', component:OwnerCreateComponent},
   {path: 'reports', component:AdminReportListComponent},
   {path: 'reports/create', component:AdminReportCreateComponent},
-  {path: 'reports/:id/edit', component: AdminReportEditComponent}
+  {path: 'reports/:id/edit', component: AdminReportEditComponent},
+  {path: 'invoice', component:AdminInvoiceListComponent},
+  {path: 'invoice/create', component:AdminInvoiceCreateComponent},
+  {path: 'invoice/:id/edit', component: AdminInvoiceEditComponent},
+  {path: 'invoice/admin/reports/:id/edit', component: AdminReportEditComponent}
+  
   // {path:'employee/:id/delete'}
   //{path: '', loadChildren: 'app/test'  }
 ]

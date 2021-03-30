@@ -1,0 +1,29 @@
+<h2>Invoice list</h2>
+<table class="table table-striped" *ngIf="invoiceList">
+    <tr >
+    <th scope="col">Id</th>
+    <th scope="col">Report ID</th>
+    <th scope="col">Business</th>
+    <th scope="col">Completed Tasks</th>
+    <th scope="col">Price</th>
+    <th scope="col">Issued</th>
+    <th scope="col">Booked</th>
+    </tr>
+    <tr *ngFor="let invoice of invoiceList">
+    <td>{{invoice.id}}</td>
+    <td><a routerLink ="reports/{{invoice.report.id}}/edit">{{invoice.report.id}}</a> </td>
+    <td>{{invoice.report.business.businessName}}</td>
+    <td>{{invoice.report.completedTasks}}</td>
+    <td>{{invoice.price}}</td>
+    <td>{{invoice.issued}}</td>
+    <td>{{invoice.booked}}</td>
+        <td><a class="btn btn-secondary" routerLink="{{invoice.id}}/edit">Edit</a></td> 
+    <!-- <td><a class="btn btn-secondary" routerLink="{{employee.id}}/edit">Edit</a></td> 
+    <td><button class="btn btn-danger" (click)="deleteEmployee(employee.id)">Delete</button></td> -->
+    <!-- <input type="button" value="Refresh Page" onClick="window.location.reload();"> -->
+    
+</tr>
+</table>
+<div>
+    <button class="btn btn-success" (click)="gotoCreate()">Create new invoice</button>
+</div>
