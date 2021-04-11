@@ -1,8 +1,8 @@
 export class InvoiceDTO{
     invoiceId: number
-    invoiceIssued: boolean
-    invoiceBooked: boolean
-    invoicePrice: number
+    invoicedIssued: boolean
+    invoicedBooked: boolean
+    invoicedPrice: number
     reportComploeteTasks: String
     reportId: number
     reportBusinessId: number

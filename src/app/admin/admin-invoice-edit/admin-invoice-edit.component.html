@@ -1,1 +1,73 @@
-<p>admin-invoice-edit works!</p>
+<h3>Edit Invoice</h3>
+<div class="ramka" > 
+  <form (ngSubmit)="onSubmit()">
+         <div class="form-group row">
+            <label for="name" class="col-2 col-form-label" >Select report</label>
+            <div class="col-10">
+            <select [(ngModel)]="invoiceDTO.reportId" name="reportId">
+            <option  *ngFor="let report of reportList" [ngValue]="report.id">{{report.id}} - {{report.business.businessName}}</option>
+          </select>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="name" class="col-2 col-form-label" >Price</label>
+        <input type="number" required [(ngModel)]="invoiceDTO.invoicedPrice" name="price"> 
+        <!-- <label for="price-input" class="col-2 col-form-label" >Price</label>
+        <div class="col-10">
+        <input class="form-control" type="number"  id="price-input" required [(ngModel)]="invoiceDTO.invoicePrice" name="price"> -->
+    </div>
+    <div class="form-group row">
+        <label for="name" class="col-2 col-form-label" >Issued</label>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" required [(ngModel)]="invoiceDTO.invoicedIssued" name="Issued" id="exampleRadios1" value=true>
+            <label class="form-check-label" for="exampleRadios1">Yes</label>
+          </div>
+          <div class="form-check form-check-inline">
+           <input class="form-check-input" type="radio"required [(ngModel)]="invoiceDTO.invoicedIssued" name="Issued" id="exampleRadios2" value=false >
+          <label class="form-check-label" for="exampleRadios2">
+            No
+        </label>
+    </div>
+    </div>
+    <div class="form-group row">
+        <label for="name" class="col-2 col-form-label" >Booked</label>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" required [(ngModel)]="invoiceDTO.invoicedBooked" name="Booked" id="exampleRadios1" value=true>
+            <label class="form-check-label" for="exampleRadios1">Yes</label>
+          </div>
+          <div class="form-check form-check-inline">
+           <input class="form-check-input" type="radio"required [(ngModel)]="invoiceDTO.invoicedBooked" name="Booked" id="exampleRadios2" value=false>
+          <label class="form-check-label" for="exampleRadios2">No</label>
+    </div>
+    </div>
+    <div> <button type="submit" class="btn btn-success">Zapisz</button></div>
+
+</form>
+</div>
+<div class="ramka">
+    <table class="table table-striped" *ngIf="reportList">
+        <tr >
+        <th scope="col">Id</th>
+        <th scope="col">Business</th>
+        <th scope="col">Employee</th>
+        <th scope="col">Completed Tasks</th>
+        <th scope="col">Point Amount</th>
+        <th scope="col">Other Tasks</th>
+        <th scope="col">Works Date</th>
+        <th scope="col">Development Date</th>
+        </tr>
+        <tr *ngFor="let report of reportList">
+        <td>{{report.id}}</td>
+        <td>{{report.business.businessName}}</td>
+        <td>{{report.employee.name}} {{report.employee.lastName}}</td>
+        <td>{{report.completedTasks}}</td>
+        <td>{{report.pointsAmount}}</td>
+        <td>{{report.otherTasks}}</td>
+        <td>{{report.worksDate}}</td>
+        <td>{{report.developmentDate}}</td>
+        </tr>
+        </table>
+
+</div>
+    
+

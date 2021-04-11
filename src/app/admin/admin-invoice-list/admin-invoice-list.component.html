@@ -15,8 +15,8 @@
     <td>{{invoice.report.business.businessName}}</td>
     <td>{{invoice.report.completedTasks}}</td>
     <td>{{invoice.price}}</td>
-    <td>{{invoice.issued}}</td>
-    <td>{{invoice.booked}}</td>
+    <td><p *ngIf="invoice.issued; else elseBlock"> YES </p> <ng-template #elseBlock> NO </ng-template></td>
+    <td><p *ngIf="invoice.booked; else elseBlock"> YES </p> <ng-template #elseBlock> NO </ng-template></td>
         <td><a class="btn btn-secondary" routerLink="{{invoice.id}}/edit">Edit</a></td> 
     <!-- <td><a class="btn btn-secondary" routerLink="{{employee.id}}/edit">Edit</a></td> 
     <td><button class="btn btn-danger" (click)="deleteEmployee(employee.id)">Delete</button></td> -->
